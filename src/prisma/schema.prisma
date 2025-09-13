@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid(2))
+  name          String?
+  email         String?   @unique
+  emailVerified Boolean   @default(false)
+  image         String?
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @default(now()) @map(name: "updated_at")
+
+  accounts      Account[]
+  sessions      Session[]
+
+  @@map(name: "users")
+}
+
+model Account {
+  id                    String   @id @default(cuid(2))
+  accountId             String
+  userId                String
+  providerId            String
+  refreshToken          String?  @db.Text
+  accessToken           String?  @db.Text
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  idToken               String?  @db.Text
+  createdAt             DateTime @default(now()) @map(name: "created_at")
+  updatedAt             DateTime @default(now()) @map(name: "updated_at")
+
+  user                  User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map(name: "accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid(2))
+  token        String   @unique
+  userId       String
+  expiresAt    DateTime
+  ipAddress    String?
+  userAgent    String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @default(now())
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map(name: "sessions")
+}
+
+model Verification {
+  id         String   @id @default(cuid(2))
+  identifier String
+  value      String   
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now())
+
+  @@map(name: "verification")
+}
