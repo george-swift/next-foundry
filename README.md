@@ -229,10 +229,10 @@ src/
 		auth-client.ts               # Better Auth client
 		prisma.ts                    # Prisma client
 		rate-limit.ts                # Upstash rate limiter config
-	components/ui/                 # Shadcn UI components
-	components/providers/          # Theme, Nuqs providers
-  prisma/                        # Prisma schema
-    schema.prisma
+	components/ui/                   # Shadcn UI components
+	components/providers/            # Theme, Nuqs providers
+    prisma/                          # Prisma schema
+      schema.prisma
 ```
 
 ## Contributing
