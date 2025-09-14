@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, Suspense } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import {
@@ -165,7 +165,11 @@ const column3: WidgetRowMeta[] = [
       icon: <Link2Icon className="size-3" />,
       title: 'nuqs',
       subtitle: 'URL State Manager',
-      body: <Nuqs />
+      body: (
+        <Suspense fallback={<>...</>}>
+          <Nuqs />
+        </Suspense>
+      )
     }
   },
   {
