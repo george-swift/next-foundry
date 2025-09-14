@@ -231,7 +231,7 @@ export default function Playground() {
       <div className="w-full max-w-[1140px] p-2.5 lg:p-5">
         <div className="lg:gap-5.5 grid grid-cols-1 grid-rows-[60px_1fr] gap-3.5">
           {/* Header */}
-          <header className="bg-background sticky top-0 z-[9999] flex h-full items-center justify-between gap-4 border-b py-2.5">
+          <header className="bg-background z-49 sticky top-0 flex h-full items-center justify-between gap-4 border-b py-2.5">
             <hgroup>
               <h2 className="text-md font-bold">Next Foundry Playground</h2>
               <p className="text-muted-foreground hidden text-xs sm:block">
@@ -242,14 +242,10 @@ export default function Playground() {
             <Link
               href="/"
               className={cn(
-                buttonVariants({
-                  variant: 'outline',
-                  size: 'sm',
-                  className: 'rounded-2xl'
-                })
+                buttonVariants({ variant: 'outline', size: 'icon' })
               )}
             >
-              <DoorOpenIcon /> Back to Home
+              <DoorOpenIcon />
             </Link>
           </header>
 

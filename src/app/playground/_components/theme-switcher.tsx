@@ -19,7 +19,7 @@ export function ThemeSwitcher() {
   ]
 
   return (
-    <div className="text-foreground dark pointer-events-none fixed left-1/2 top-0 z-[10000] -translate-x-1/2">
+    <div className="text-foreground dark pointer-events-none fixed left-1/2 top-0 z-50 -translate-x-1/2">
       <motion.div
         className={cn(
           'bg-muted/90 pointer-events-auto flex min-w-[100px] flex-col items-center justify-center gap-1 overflow-hidden rounded-b-[15px] border-b border-l border-r pt-1.5'
