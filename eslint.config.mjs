@@ -17,7 +17,11 @@ const eslintConfig = [
       '.next/**',
       'out/**',
       'build/**',
-      'next-env.d.ts'
+      'next-env.d.ts',
+      '.commitlintrc.js',
+      '.lintstagedrc.js',
+      'src/lib/generated/**',
+      'src/prisma/**'
     ]
   }
 ]
