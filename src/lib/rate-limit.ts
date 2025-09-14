@@ -3,14 +3,11 @@ import type { Duration } from '@upstash/ratelimit'
 import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
 
-const RATE_LIMIT_ACTIONS = [
-  'auth.magicLink',
-  'auth.deleteAccount',
-  'email.test',
-  'rateLimit.test'
-] as const
-
-export type RateLimitAction = (typeof RATE_LIMIT_ACTIONS)[number]
+export type RateLimitAction =
+  | 'auth.magicLink'
+  | 'auth.deleteAccount'
+  | 'email.test'
+  | 'rateLimit.test'
 
 interface SlidingWindowConfig {
   limit: number

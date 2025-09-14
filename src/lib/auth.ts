@@ -43,11 +43,6 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: 'postgresql'
   }),
-  onAPIError: {
-    onError: error => {
-      // You can log the error to an external service here
-    }
-  },
   plugins: [
     magicLink({
       sendMagicLink: async ({ email, url }) => {
