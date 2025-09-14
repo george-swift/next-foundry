@@ -245,4 +245,4 @@ This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md)
 
 ---
 
-If this starter saves you time, consider starring the repo 🤍
+If this starter saves you time, consider starring the repo ⭐️
