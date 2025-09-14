@@ -150,7 +150,7 @@ Key files:
 
 ### Adding Another Supported Provider
 
-Follow [the guide](https://www.better-auth.com/docs/concepts/oauth) on Better Auth update
+Follow [the guide](https://www.better-auth.com/docs/concepts/oauth) on Better Auth
 
 ### Magic Link Flow
 
@@ -245,4 +245,4 @@ This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md)
 
 ---
 
-If this starter saves you time, consider starring the repo ⭐️
+If this starter saves you time, consider leaving a star ⭐️ on the repository
